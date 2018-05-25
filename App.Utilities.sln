@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeProject.GenericHandler"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Utilities", "App.Utilities\App.Utilities.csproj", "{31EBC3A2-F045-4A32-96EB-F844B00D3A1B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Original", "Original", "{86B4B21F-87BE-452E-8CAF-F6976286189D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ModelBinder", "ModelBinder", "{7B1DADBB-CECE-489E-B31C-E7AFB4F16172}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelBinder.Web", "ModelBinder.Web\ModelBinder.Web.csproj", "{77D0C1DD-AFDF-407C-86A7-ACD68471BFBA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,8 +27,17 @@ Global
 		{31EBC3A2-F045-4A32-96EB-F844B00D3A1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31EBC3A2-F045-4A32-96EB-F844B00D3A1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31EBC3A2-F045-4A32-96EB-F844B00D3A1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77D0C1DD-AFDF-407C-86A7-ACD68471BFBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77D0C1DD-AFDF-407C-86A7-ACD68471BFBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77D0C1DD-AFDF-407C-86A7-ACD68471BFBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77D0C1DD-AFDF-407C-86A7-ACD68471BFBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F8FA0646-021B-4580-8EF2-7E58B9EF9A3C} = {86B4B21F-87BE-452E-8CAF-F6976286189D}
+		{31EBC3A2-F045-4A32-96EB-F844B00D3A1B} = {86B4B21F-87BE-452E-8CAF-F6976286189D}
+		{77D0C1DD-AFDF-407C-86A7-ACD68471BFBA} = {7B1DADBB-CECE-489E-B31C-E7AFB4F16172}
 	EndGlobalSection
 EndGlobal

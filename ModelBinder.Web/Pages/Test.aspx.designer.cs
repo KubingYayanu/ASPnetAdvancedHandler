@@ -7,10 +7,10 @@
 // </自動產生的>
 //------------------------------------------------------------------------------
 
-namespace CodeProject.GenericHandler {
+namespace ModelBinder.Web.Pages {
     
     
-    public partial class Default {
+    public partial class Test {
         
         /// <summary>
         /// form1 控制項。

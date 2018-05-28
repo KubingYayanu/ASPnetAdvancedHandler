@@ -53,10 +53,14 @@
     <Compile Include="Web\Handlers\Attributes\HttpVerbAttribute.cs" />
     <Compile Include="Web\Handlers\Attributes\RequireAuthenticationAttribute.cs" />
     <Compile Include="Web\Handlers\BaseHandler.cs" />
+    <Compile Include="Web\Handlers\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Web\Handlers\Exceptions\HttpVerbNotAllowed.cs" />
     <Compile Include="Web\Handlers\OnMethodInvokeArgs.cs" />
     <Compile Include="Web\Handlers\ResponseContentTypes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web\Interfaces\IModelBinder.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

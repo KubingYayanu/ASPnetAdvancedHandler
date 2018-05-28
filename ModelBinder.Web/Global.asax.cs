@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Security;
-using System.Web.SessionState;
+﻿using ModelBinder.Web.App_Start;
+using System;
+using System.Web.Optimization;
 
 namespace ModelBinder.Web
 {
@@ -11,6 +8,7 @@ namespace ModelBinder.Web
     {
         protected void Application_Start(object sender, EventArgs e)
         {
+            BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
     }
 }

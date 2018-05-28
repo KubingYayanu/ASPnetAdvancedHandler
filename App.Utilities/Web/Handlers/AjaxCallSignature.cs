@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App.Utilities.Web.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -195,7 +196,7 @@ namespace App.Utilities.Web.Handlers
             }
         }
 
-        public object Invoke(BaseHandler handler, HttpContext context)
+        public object Invoke(IModelBinder handler, HttpContext context)
         {
             MethodInfo m = null;
             if (string.IsNullOrEmpty(method))

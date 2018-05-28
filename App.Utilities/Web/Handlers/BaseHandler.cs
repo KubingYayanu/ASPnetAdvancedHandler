@@ -1,19 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Web;
 using System.Web.Script.Serialization;
-using System.Reflection;
 using System.Web.SessionState;
-using System.ComponentModel;
 
 namespace App.Utilities.Web.Handlers
 {
-	public abstract partial class BaseHandler : IHttpHandler, IRequiresSessionState
+    public abstract partial class BaseHandler : IHttpHandler, IRequiresSessionState
 	{
-
 		private HttpContext _context = null;
+
 		public HttpContext context
 		{
 			get { return _context; }
@@ -21,8 +20,11 @@ namespace App.Utilities.Web.Handlers
 		}
 
 		public virtual object GET() { return "Default GET Response"; }
+
 		public virtual object POST() { return "Default POST Response"; }
+
 		public virtual object PUT() { return "Default PUT Response"; }
+
 		public virtual object DELETE() { return "Default DELETE Response"; }
 
 		/// <summary>

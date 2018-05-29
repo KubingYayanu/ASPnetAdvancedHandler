@@ -139,7 +139,7 @@ namespace App.Utilities.Web.Handlers
             // loop through them
             foreach (var p in objectProperties)
             {
-                String propName = p.Remove(0, nsPrefix.Length + 1).Split('+')[0];
+                string propName = p.Remove(0, nsPrefix.Length + 1).Split('+')[0];
 
                 argumentObject.GetType()
                     .GetProperty(propName)
@@ -154,22 +154,22 @@ namespace App.Utilities.Web.Handlers
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        public object HydrateValue(string propertyName, Type propertyType, String parentNamespace)
+        public object HydrateValue(string propertyName, Type propertyType, string parentNamespace)
         {
-            String propFQN = string.IsNullOrEmpty(parentNamespace) ? propertyName : parentNamespace + "+" + propertyName;
+            string propFQN = string.IsNullOrEmpty(parentNamespace) ? propertyName : parentNamespace + "+" + propertyName;
             if (args.Keys.Contains(propFQN))
             {
                 // its usual to pass an empty json string property but casting it to certain types will throw an exception
                 if (string.IsNullOrEmpty(args[propFQN].ToString()) || args[propFQN].ToString() == "null" || args[propFQN].ToString() == "undefined")
                 {
                     // handle numerics. convert null or empty input values to 0
-                    if (propertyType.Equals(typeof(System.Int16)) || propertyType.Equals(typeof(System.Int32)) ||
-                        propertyType.Equals(typeof(System.Int64)) || propertyType.Equals(typeof(System.Decimal)) ||
-                        propertyType.Equals(typeof(System.Double)) || propertyType.Equals(typeof(System.Byte)))
+                    if (propertyType.Equals(typeof(short)) || propertyType.Equals(typeof(int)) ||
+                        propertyType.Equals(typeof(long)) || propertyType.Equals(typeof(decimal)) ||
+                        propertyType.Equals(typeof(double)) || propertyType.Equals(typeof(byte)))
                     {
                         args[propFQN] = 0;
                     }
-                    else if (propertyType.Equals(typeof(System.Guid)))
+                    else if (propertyType.Equals(typeof(Guid)))
                     {
                         args[propFQN] = new Guid();
                     }
@@ -192,7 +192,8 @@ namespace App.Utilities.Web.Handlers
             }
             else
             {
-                return null;    // if there are missing arguments try passing null
+                // if there are missing arguments try passing null
+                return null;
             }
         }
 
@@ -292,7 +293,8 @@ namespace App.Utilities.Web.Handlers
 
             string propFQN = string.IsNullOrEmpty(parentNamespace) ? propertyName : parentNamespace + "+" + propertyName;
 
-            if (elementType.IsValueType)
+            if (elementType.IsValueType ||
+                elementType.Equals(typeof(string)))
             {
                 TypeConverter conv = TypeDescriptor.GetConverter(elementType);
                 string[] values = args[propFQN + "+"].ToString().Split(new char[] { ',' });

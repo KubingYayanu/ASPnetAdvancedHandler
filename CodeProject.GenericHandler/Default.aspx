@@ -185,9 +185,17 @@
                             args: {
                                 items: [1, 2, 3],
                                 addresses: [
-                                    { Street: 'Avenue A', DoorNumber: '123', PostalCode: { Code: '2910', City: 'Setubal' } },
                                     {
-                                        Street: 'Avenue B', DoorNumber: '45',
+                                        Street: 'Avenue A',
+                                        DoorNumber: '123',
+                                        PostalCode: {
+                                            Code: '2910',
+                                            City: 'Setubal'
+                                        }
+                                    },
+                                    {
+                                        Street: 'Avenue B',
+                                        DoorNumber: '45',
                                         PostalCode: {
                                             Code: '666',
                                             City: 'The Deep City',

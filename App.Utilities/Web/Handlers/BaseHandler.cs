@@ -50,7 +50,7 @@ namespace App.Utilities.Web.Handlers
         {
             this.context = context;
 
-            // it's possible to the requestor to be able to handle everything himself, overriding all this implemention
+            // it's possible to the requestor to be able to handle everything himself, overriding all this implementation
             string handleRequest = context.Request["handlerequest"];
             if (!string.IsNullOrEmpty(handleRequest) && handleRequest.ToLower() == "true")
             {
@@ -115,7 +115,7 @@ namespace App.Utilities.Web.Handlers
                         context.Response.Write(result);
                         break;
                     default:
-                        throw new Exception(string.Format("Unsuported content type [{0}]", context.Response.ContentType));
+                        throw new Exception(string.Format("Unsupported content type [{0}]", context.Response.ContentType));
                 }
             }
             else
@@ -147,7 +147,7 @@ namespace App.Utilities.Web.Handlers
         }
 
         /// <summary>
-        /// Setting this to false will make the handler to respond with exacly what the called method returned.
+        /// Setting this to false will make the handler to respond with exactly what the called method returned.
         /// If true the handler will try to serialize the content based on the ContentType set.
         /// </summary>
         public bool SkipDefaultSerialization { get; set; }
@@ -159,7 +159,7 @@ namespace App.Utilities.Web.Handlers
         public bool SkipContentTypeEvaluation { get; set; }
 
         /// <summary>
-        /// Prints an help page discribing the available methods on this handler.
+        /// Prints an help page describing the available methods on this handler.
         /// </summary>
         /// <returns></returns>
         public string Help()

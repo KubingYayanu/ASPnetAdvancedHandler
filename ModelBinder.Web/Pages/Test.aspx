@@ -22,10 +22,15 @@
                 e.preventDefault();
 
                 var vm = {
-                    a: 1,
-                    b: "2",
-                    c: [3, 4, 5],
-                    d: ["6", "7", "8"]
+                    method: "TestFunction",
+                    args: {
+                        m: {
+                            a: 1,
+                            b: "2",
+                            c: [3, 4, 5],
+                            d: ["6", "7", "8"]
+                        }
+                    }
                 };
 
                 $.ajax({

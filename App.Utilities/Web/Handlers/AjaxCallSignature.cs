@@ -226,8 +226,8 @@ namespace App.Utilities.Web.Handlers
                 /*
 				 The logic here is:
 				 *	-> if no attribute is found means it allows every verb
-				 *	-> is a method have verb attbibutes defined then it will ignore the ones on the class
-				 *	-> verb attributes on the class are applied to all methods without verb attribues
+				 *	-> is a method have verb attributes defined then it will ignore the ones on the class
+				 *	-> verb attributes on the class are applied to all methods without verb attributes
 				 */
                 var handlerSupportedVerbs = handler.GetType().GetCustomAttributes(typeof(HttpVerbAttribute), true).Cast<HttpVerbAttribute>();
                 var methodSupportedVerbs = m.GetCustomAttributes(typeof(HttpVerbAttribute), true).Cast<HttpVerbAttribute>();
@@ -323,7 +323,7 @@ namespace App.Utilities.Web.Handlers
                 result = Array.CreateInstance(elementType, max_index + 1);
                 for (int i = 0; i <= max_index; i++)
                 {
-                    String nsPrefix = String.Format("{0}+{1}", propFQN, i.ToString());
+                    string nsPrefix = string.Format("{0}+{1}", propFQN, i.ToString());
                     result.SetValue(ProcessProperty(propertyName + "+" + i.ToString(), result.GetType().GetElementType(), parentNamespace), i);
                 }
             }
@@ -349,7 +349,7 @@ namespace App.Utilities.Web.Handlers
             {
                 return HydrateArray(propertyName, propertyType, parentNamespace);
             }
-            else if (propertyType.IsClass && !propertyType.Equals(typeof(String)))
+            else if (propertyType.IsClass && !propertyType.Equals(typeof(string)))
             {
                 return HydrateClass(propertyName, propertyType, parentNamespace);
             }

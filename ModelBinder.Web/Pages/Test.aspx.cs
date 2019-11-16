@@ -1,6 +1,6 @@
-﻿using App.Utilities.Web.Handlers;
+﻿using System;
+using App.Utilities.Web.Handlers;
 using ModelBinder.Web.Models;
-using System;
 
 namespace ModelBinder.Web.Pages
 {
@@ -8,12 +8,12 @@ namespace ModelBinder.Web.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
-        public void TestFunction(TestModel m)
+        public TestModel TestFunction(TestModel m)
         {
-
+            Context.Response.ContentType = "application/json";
+            return m;
         }
     }
 }

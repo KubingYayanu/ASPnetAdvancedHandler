@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
 </head>
 <body>
@@ -36,11 +36,11 @@
                 $.ajax({
                     type: "POST",
                     url: "Test.aspx",
-                    data: vm,
-                    dataType: "json",
-                    success: function (response) {
-                        console.log(response);
-                    }
+                    data: vm
+                }).done(function (response) {
+                    console.log(response);
+                }).fail(function (jqXHR, textStatus) {
+                    console.log(textStatus);
                 });
             });
         });

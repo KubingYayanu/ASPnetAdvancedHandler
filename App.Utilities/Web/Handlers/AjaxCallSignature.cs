@@ -143,7 +143,7 @@ namespace App.Utilities.Web.Handlers
 
                 argumentObject.GetType()
                     .GetProperty(propName)
-                        .SetValue(argumentObject, ProcessProperty(propName, argumentObject.GetType().GetProperty(propName).PropertyType, nsPrefix), null);
+                    ?.SetValue(argumentObject, ProcessProperty(propName, argumentObject.GetType().GetProperty(propName).PropertyType, nsPrefix), null);
             }
 
             return argumentObject;

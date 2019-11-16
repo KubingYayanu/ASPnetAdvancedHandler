@@ -11,5 +11,9 @@ namespace ModelBinder.Web.Models
         public List<int> c { get; set; }
 
         public List<string> d { get; set; }
+
+        public SubTestModel submodel { get; set; }
+
+        public List<SubTestModel> submodels { get; set; }
     }
 }

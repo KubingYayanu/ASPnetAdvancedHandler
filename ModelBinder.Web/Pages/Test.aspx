@@ -28,7 +28,18 @@
                             a: 1,
                             b: "2",
                             c: [3, 4, 5],
-                            d: ["6", "7", "8"]
+                            d: ["6", "7", "8"],
+                            submodel: {
+                                date: "2019-11-15",
+                                boolean: true
+                            },
+                            submodels: [{
+                                date: "2019-11-16",
+                                boolean: true
+                            }, {
+                                date: "2019-11-17",
+                                boolean: false
+                            }]
                         }
                     }
                 };
